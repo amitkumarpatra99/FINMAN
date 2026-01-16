@@ -22,3 +22,51 @@ declare type DoughnutChartProps = {
 declare type MobileNavProps = {
     user: any;
 }
+
+declare type Bank = {
+    $id: string;
+    accountId: string;
+    bankId: string;
+    accessToken: string;
+    fundingSourceUrl: string;
+    userId: string;
+    shareableId: string;
+}
+
+declare type Account = {
+    id: string;
+    availableBalance: number;
+    currentBalance: number;
+    officialName: string;
+    mask: string;
+    institutionId: string;
+    name: string;
+    type: string;
+    subtype: string;
+    appwriteItemId: string;
+    sharableId: string;
+}
+
+declare type CreditCardProps = {
+    account: Account;
+    userName: string;
+    showBalance?: boolean;
+}
+
+declare type RightSidebarProps = {
+    user: any;
+    transactions: any[];
+    banks: any[];
+}
+
+declare type FooterProps = {
+    user: any;
+    type?: 'mobile' | 'desktop';
+}
+
+declare type RecentTransactionsProps = {
+    accounts: Account[];
+    transactions: any[];
+    appwriteItemId: string;
+    page: number;
+}
