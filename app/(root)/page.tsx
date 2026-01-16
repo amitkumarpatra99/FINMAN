@@ -1,4 +1,5 @@
 import HeaderBox from '@/components/HeaderBox'
+import RecentTransactions from '@/components/RecentTransactions';
 import RightSidebar from '@/components/RightSidebar';
 import TotalBalanceBox from '@/components/TotalBalanceBox';
 
@@ -23,7 +24,12 @@ const Home = () => {
                     />
                 </header>
 
-                RECENT TRANSACTIONS
+                <RecentTransactions
+                    accounts={[]}
+                    transactions={[]}
+                    appwriteItemId=""
+                    page={1}
+                />
             </div>
 
             <RightSidebar
