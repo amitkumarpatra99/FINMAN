@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
+import TransactionsTable from './TransactionsTable'
 
 const RecentTransactions = ({
     accounts,
@@ -36,12 +36,7 @@ const RecentTransactions = ({
                         key={account.id}
                         className="space-y-4"
                     >
-                        <div className="flex flex-col gap-2">
-                            {/* Mock Transactions */}
-                            <div className="bg-white p-4 rounded-lg border border-gray-200">
-                                <p className="text-sm text-gray-600">No transactions available.</p>
-                            </div>
-                        </div>
+                        <TransactionsTable transactions={transactions.filter((t) => t.accountId === account.id)} />
                     </TabsContent>
                 ))}
             </Tabs>

@@ -2,9 +2,11 @@ import HeaderBox from '@/components/HeaderBox'
 import RecentTransactions from '@/components/RecentTransactions';
 import RightSidebar from '@/components/RightSidebar';
 import TotalBalanceBox from '@/components/TotalBalanceBox';
+import { accounts, transactions, user } from '@/constants';
 
 const Home = () => {
-    const loggedIn = { firstName: 'Amit', lastName: 'JSM', email: 'amit@jsm.com' };
+    const loggedIn = user;
+    const totalCurrentBalance = accounts.reduce((acc, account) => acc + account.currentBalance, 0);
 
     return (
         <section className="home">
@@ -18,24 +20,24 @@ const Home = () => {
                     />
 
                     <TotalBalanceBox
-                        accounts={[]}
-                        totalBanks={1}
-                        totalCurrentBalance={1250.35}
+                        accounts={accounts}
+                        totalBanks={accounts.length}
+                        totalCurrentBalance={totalCurrentBalance}
                     />
                 </header>
 
                 <RecentTransactions
-                    accounts={[]}
-                    transactions={[]}
-                    appwriteItemId=""
+                    accounts={accounts}
+                    transactions={transactions}
+                    appwriteItemId={accounts[0]?.appwriteItemId}
                     page={1}
                 />
             </div>
 
             <RightSidebar
                 user={loggedIn}
-                transactions={[]}
-                banks={[{ currentBalance: 123.50, $id: '123' }, { currentBalance: 500.50, $id: '456' }]}
+                transactions={transactions}
+                banks={accounts}
             />
         </section>
     )

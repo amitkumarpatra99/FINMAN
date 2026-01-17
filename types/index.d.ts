@@ -6,7 +6,7 @@ declare type HeaderBoxProps = {
   };
 
 declare type TotalBalanceBoxProps = {
-    accounts: any[];
+    accounts: Account[];
     totalBanks: number;
     totalCurrentBalance: number;
 }
@@ -16,7 +16,7 @@ declare type SiderbarProps = {
 }
 
 declare type DoughnutChartProps = {
-    accounts: any[];
+    accounts: Account[];
 }
 
 declare type MobileNavProps = {
@@ -31,6 +31,20 @@ declare type Bank = {
     fundingSourceUrl: string;
     userId: string;
     shareableId: string;
+}
+
+declare type Transaction = {
+    id: string;
+    $id: string;
+    name: string;
+    paymentChannel: string;
+    type: string;
+    accountId: string;
+    amount: number;
+    pending: boolean;
+    category: string;
+    date: string;
+    image: string;
 }
 
 declare type Account = {
@@ -55,8 +69,8 @@ declare type CreditCardProps = {
 
 declare type RightSidebarProps = {
     user: any;
-    transactions: any[];
-    banks: any[];
+    transactions: Transaction[];
+    banks: Account[];
 }
 
 declare type FooterProps = {
@@ -66,7 +80,7 @@ declare type FooterProps = {
 
 declare type RecentTransactionsProps = {
     accounts: Account[];
-    transactions: any[];
+    transactions: Transaction[];
     appwriteItemId: string;
     page: number;
 }
