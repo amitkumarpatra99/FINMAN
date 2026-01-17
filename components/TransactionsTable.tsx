@@ -18,8 +18,8 @@ const TransactionsTable = ({ transactions }: { transactions: Transaction[] }) =>
                         <th className="px-6 py-3">Amount</th>
                         <th className="px-6 py-3">Status</th>
                         <th className="px-6 py-3">Date</th>
-                        <th className="px-6 py-3">Channel</th>
-                        <th className="px-6 py-3">Category</th>
+                        <th className="px-6 py-3 max-md:hidden">Channel</th>
+                        <th className="px-6 py-3 max-md:hidden">Category</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,8 +44,8 @@ const TransactionsTable = ({ transactions }: { transactions: Transaction[] }) =>
                                     </span>
                                 </td>
                                 <td className="px-6 py-4">{t.date}</td>
-                                <td className="px-6 py-4 capitalize">{t.paymentChannel.replace('_', ' ')}</td>
-                                <td className="px-6 py-4">
+                                <td className="px-6 py-4 capitalize max-md:hidden">{t.paymentChannel.replace('_', ' ')}</td>
+                                <td className="px-6 py-4 max-md:hidden">
                                     <span className="px-2 py-1 rounded-full bg-blue-100 text-blue-800 text-xs">
                                         {t.category}
                                     </span>

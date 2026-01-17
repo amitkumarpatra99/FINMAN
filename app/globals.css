@@ -240,12 +240,17 @@
 
   /* My Banks */
   .my-banks {
-    @apply flex h-screen max-h-screen w-full flex-col gap-8 bg-gray-25 p-8 xl:py-12;
+    @apply flex h-screen max-h-screen w-full flex-col gap-8 bg-gray-25 px-5 py-7 sm:p-8 xl:py-12;
   }
 
   /* My Banks */
   .transactions {
-    @apply flex max-h-screen w-full flex-col gap-8 overflow-y-scroll bg-gray-25 p-8 xl:py-12;
+    @apply flex max-h-screen w-full flex-col gap-8 overflow-y-scroll bg-gray-25 px-5 py-7 sm:p-8 xl:py-12;
+  }
+
+  /* Payment Transfer */
+  .payment-transfer {
+    @apply [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex flex-col overflow-y-scroll bg-gray-25 px-5 py-7 sm:p-8 md:max-h-screen xl:py-12;
   }
 
   .transactions-header {
@@ -352,9 +357,7 @@
   }
 
   /* Payment Transfer */
-  .payment-transfer {
-    @apply [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex flex-col overflow-y-scroll bg-gray-25 p-8 md:max-h-screen xl:py-12;
-  }
+
 
   .payment-transfer_form-item {
     @apply flex w-full max-w-[850px] flex-col gap-3 md:flex-row lg:gap-8;
