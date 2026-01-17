@@ -1,37 +1,10 @@
 import HeaderBox from '@/components/HeaderBox'
 import BankCard from '@/components/BankCard'
 import React from 'react'
+import { accounts, user } from '@/constants'
 
 const MyBanks = () => {
-    const loggedIn = { firstName: 'Amit', lastName: 'JSM' }
-    const accounts = [
-        {
-            id: '1',
-            name: 'Bank of America',
-            currentBalance: 1250.35,
-            availableBalance: 1250.35,
-            mask: '1234',
-            appwriteItemId: 'item1',
-            officialName: 'Bank of America Standard Checking',
-            institutionId: 'ins_1',
-            type: 'depository',
-            subtype: 'checking',
-            sharableId: 'share1'
-        },
-        {
-            id: '2',
-            name: 'Chase Bank',
-            currentBalance: 500.50,
-            availableBalance: 500.50,
-            mask: '5678',
-            appwriteItemId: 'item2',
-            officialName: 'Chase Bank Checking',
-            institutionId: 'ins_2',
-            type: 'depository',
-            subtype: 'checking',
-            sharableId: 'share2'
-        }
-    ]
+    const loggedIn = user;
 
     return (
         <section className='flex'>
@@ -46,7 +19,7 @@ const MyBanks = () => {
                         Your Cards
                     </h2>
                     <div className="flex flex-wrap gap-6">
-                        {accounts && accounts.map((a: any) => (
+                        {accounts && accounts.map((a: Account) => (
                             <BankCard
                                 key={a.id}
                                 account={a}
@@ -61,3 +34,5 @@ const MyBanks = () => {
 }
 
 export default MyBanks
+
+
