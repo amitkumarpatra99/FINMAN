@@ -40,7 +40,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                             height={34}
                             alt="Horizon logo"
                         />
-                        <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">Horizon</h1>
+                        <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">FIN MAN</h1>
                     </Link>
                     <div className="mobilenav-sheet">
                         <SheetClose asChild>
@@ -70,7 +70,11 @@ const MobileNav = ({ user }: MobileNavProps) => {
                                     )
                                 })}
 
-                                USER
+                                <div className="mt-auto pt-4">
+                                    <p className="text-12 font-semibold text-white">
+                                        Make in India 🇮🇳
+                                    </p>
+                                </div>
                             </nav>
                         </SheetClose>
 

@@ -21,7 +21,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
                         alt="Horizon logo"
                         className="size-[24px] max-xl:size-14"
                     />
-                    <h1 className="sidebar-logo">Horizon</h1>
+                    <h1 className="sidebar-logo">FIN MAN</h1>
                 </Link>
 
                 {sidebarLinks.map((item) => {
@@ -48,7 +48,12 @@ const Sidebar = ({ user }: SiderbarProps) => {
                     )
                 })}
 
-                USER
+                <div className="mt-auto pl-4 pb-4">
+                    <p className="text-12 font-semibold text-gray-600">
+                        Make in India 🇮🇳
+                    </p>
+                </div>
+
             </nav>
 
             <Footer user={user} />
